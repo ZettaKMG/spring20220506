@@ -2,7 +2,7 @@ package lecture.c04core;
 
 public class Dao {
 	
-	private void select() {
+	public void select() {
 		
 		
 	}
