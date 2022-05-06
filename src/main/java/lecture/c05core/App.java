@@ -14,8 +14,10 @@ public class App {
 		
 		MyServlet s = context.getBean(MyServlet.class);
 		MyDao d = context.getBean(MyDao.class);
+		MyDao d1 = (MyDao) context.getBean("myDao");
 		
 		log.warn(s);
 		log.warn(d);
+		log.warn(d1);
 	}
 }

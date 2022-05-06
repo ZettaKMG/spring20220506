@@ -1,5 +1,12 @@
 package lecture.c05core;
 
-public class MyServlet {
+import lombok.Data;
 
+@Data
+public class MyServlet {
+	private MyDao dao;
+	
+	public void doget() {
+		dao.insert();
+	}
 }
