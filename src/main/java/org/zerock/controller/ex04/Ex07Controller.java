@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping
+@RequestMapping("ex07")
 public class Ex07Controller {
 
 	@RequestMapping("sub01")
@@ -19,7 +19,7 @@ public class Ex07Controller {
 		// 3. add attribute
 		// 4. forward/redirect
 		
-		return "redirect:https//www.naver.com";
+		return "redirect:https://www.naver.com";
 	}
 	
 	@RequestMapping("sub02")
