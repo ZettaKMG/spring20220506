@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.controller.ex03.Customer;
+import org.zerock.controller.ex03.Employee;
 
 @Controller
 @RequestMapping("ex09")
@@ -38,4 +39,50 @@ public class Ex09Controller {
 	public void method04(@ModelAttribute("customer") Customer cus) {
 		
 	}
+//	/ex09/sub05?name=trump&age=40&address=newyork	
+	@RequestMapping("sub05")
+	public String method05(@ModelAttribute Customer cus) {
+		return "ex09/sub04";
+	}
+	
+//	/ex09/sub06?name=trump&age=40&address=newyork	
+	@RequestMapping("sub06")
+	public String method06(Customer cus) {
+		return "ex09/sub04";
+	}
+	
+	// 요청경로 : /ex09/sub07
+	// Query String : ?name=sunja&salary=50000&email=sunja@gmail.com
+	
+	// method07 작성
+	// org.zerock.controller.ex03.Employee 객체가
+	// 쿼리 스트링으로 넘어온 파라미터 값들을 세팅해서
+	// model에 "employee"라는 이름의 attribute로 추가되고
+	// /ex09/sub07 뷰로 포워드 되도록
+	/*
+	@RequestMapping("sub07")
+	public void method07(HttpServletRequest request) {
+		String name = request.getParameter("name");
+		String salaryStr = request.getParameter("salary");
+		String email = request.getParameter("email");
+		
+		int salary = Integer.parseInt(salaryStr);
+		
+		Employee emp = new Employee();
+		emp.setEmail(email);
+		emp.setName(name);
+		emp.setSalary(salary);
+		
+		request.setAttribute("employee", emp);
+		
+		request.getRequestDispatcher("/WEB-INF/views/ex09/sub07.jsp");
+	}	
+	*/
+	
+	@RequestMapping("sub07")
+	public void method07(Employee emp) {
+		
+	}
+	
+	
 }
