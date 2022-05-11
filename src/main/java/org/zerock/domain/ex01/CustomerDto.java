@@ -6,4 +6,6 @@ import lombok.Data;
 public class CustomerDto {
 	private String customerName;
 	private String address;
+	private String city;
+	private String country;
 }
