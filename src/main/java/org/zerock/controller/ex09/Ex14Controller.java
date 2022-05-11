@@ -3,7 +3,10 @@ package org.zerock.controller.ex09;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.ex01.CustomerDto;
 import org.zerock.domain.ex01.EmployeeDto;
 import org.zerock.service.ex02.Ex04Service;
@@ -66,4 +69,25 @@ public class Ex14Controller {
 		model.addAttribute("employee", dto);
 	}
 	
+	@GetMapping("sub05")
+	public void method05() {
+		// form 있는 jsp로 forward
+	}
+	
+	@PostMapping("sub05")
+	public String method06(CustomerDto customer, RedirectAttributes rttr) {
+		// 1. request parameter 수집/가공
+		System.out.println(customer);
+		// 2. business logic 실행
+		boolean ok = service.addCustomer(customer);
+		// 3. add attribute
+		if (ok) {
+			rttr.addFlashAttribute("message", "등록 완료");
+		} else {
+			rttr.addFlashAttribute("message", "등록 실패");
+		}
+		// 4. forward / redirect
+		
+		return "redirect:/ex14/sub05";
+	}
 }

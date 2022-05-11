@@ -34,4 +34,9 @@ public class Ex04Service {
 		return mapper.selectEmployeeById(id);
 	}
 
+	public boolean addCustomer(CustomerDto customer) {
+		int count = mapper.insertCustomer(customer);
+		return count == 1;
+	}
+
 }

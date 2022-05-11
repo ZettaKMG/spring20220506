@@ -1,5 +1,6 @@
 package org.zerock.mapper.ex02;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.zerock.domain.ex01.CustomerDto;
 import org.zerock.domain.ex01.EmployeeDto;
@@ -18,5 +19,10 @@ public interface Ex02Mapper {
 
 	@Select("SELECT FirstName, LastName, BirthDate FROM Employees WHERE EmployeeID = #{id}")
 	EmployeeDto selectEmployeeById(int id);
+
+	@Insert("INSERT INTO Customers "
+			+ " (CustomerName, ContactName, City, Country, Address, PostalCode) "
+			+ " VALUES (#{customerName}, #{contactName}, #{city}, #{country}, #{address}, #{postalCode} ) ")
+	int insertCustomer(CustomerDto customer);
 	
 }
