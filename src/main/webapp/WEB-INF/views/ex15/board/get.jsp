@@ -12,31 +12,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>글 목록</h1>
+	<h1>${board.id }번 게시물</h1>
 	
-	<table class="table">
-		<thead>
-			<tr>
-				<th>id</th>
-				<th>title</th>
-				<th>inserted</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${boardList }" var="board">
-				<tr>
-					<td>${board.id }</td>
-					<td>
-					<c:url value="/ex15/board/${board.id }" var="link"></c:url>					
-					
-					<a href="${link }">
-					${board.title }
-					</a>
-					</td>
-					<td>${board.inserted }</td>
-				</tr>
-			</c:forEach>
-		</tbody>		
-	</table>
+	제목 : <input type="text" value="${board.title }" readonly /> <br />
+	
+	본문 : <textarea cols="30" rows="10" readonly >${board.body }</textarea> <br />
+	
+	작성일시 : <input type="datetime-local" value="${board.inserted }" readonly />
 </body>
 </html>
