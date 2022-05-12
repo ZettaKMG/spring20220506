@@ -6,4 +6,14 @@
   <select id="selectCustomerNameById" resultType="string">
     SELECT CustomerName FROM Customers WHERE CustomerId = #{id}
   </select>
+  
+  <select id="selectEmployeeFirstNameById" resultType="string">
+  	SELECT FirstName FROM Employees WHERE EmployeeID = #{id}
+  </select>
+  
+  <!-- insert
+  
+  update 
+  
+  delete -->
 </mapper>

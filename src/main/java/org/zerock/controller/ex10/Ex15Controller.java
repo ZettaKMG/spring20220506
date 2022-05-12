@@ -21,4 +21,13 @@ public class Ex15Controller {
 		
 		return "/ex14/sub01";
 	}
+	
+	@RequestMapping("sub02")
+	public String method02(int id, Model model) {
+		String name = service.getEmployeeFirstNameById(id);
+		
+		model.addAttribute("employeeName", name);
+		
+		return "ex14/sub02";
+	}
 }
