@@ -21,7 +21,7 @@
 	<form action="${employeeUrl }" method="post">
 		First Name : <input type="text" name="firstName" value="donald" /> <br />
 		Last Name : <input type="text" name="lastName" value="trump" /> <br />
-		<!-- Birth Date : <input type="date" name="birthDate" value="1950-02-02" /> <br /> -->
+		Birth Date : <input type="date" name="birthDate" value="1950-02-02" /> <br />
 		Photo : <input type="text" name="photo" value="photo9999" /> <br />
 		Notes : <textarea name="notes" id="" cols="30" rows="10">US President...</textarea> <br />
 		
