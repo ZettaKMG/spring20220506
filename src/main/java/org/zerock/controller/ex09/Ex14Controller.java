@@ -90,4 +90,25 @@ public class Ex14Controller {
 		
 		return "redirect:/ex14/sub05";
 	}
+	
+	/* 직원 등록 */
+	@GetMapping("sub06")
+	public void employeeInputForm(EmployeeDto dto) {
+		
+		
+	}
+	
+	@PostMapping("sub06")
+	public String addEmployeeProcess(EmployeeDto dto, RedirectAttributes rttr) {
+		
+		boolean success = service.addEmployee(dto);
+		
+		if (success) {
+			rttr.addFlashAttribute("message", "직원 등록 완료");
+		} else {
+			rttr.addFlashAttribute("message", "직원 등록 실패");
+		}
+		
+		return "redirect:/ex14/sub06";
+	}
 }

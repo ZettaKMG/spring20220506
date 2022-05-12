@@ -9,4 +9,6 @@ public class EmployeeDto {
 	private String firstName;
 	private String lastName;
 	private LocalDate birthDate;
+	private String photo;
+	private String notes;
 }
