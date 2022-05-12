@@ -33,5 +33,11 @@ public class Ex05Service {
 		return mapper.getBoard(id);
 	}
 
+	public boolean updateBoard(BoardDto board) {
+		int cnt = mapper.updateBoard(board);
+		
+		return cnt == 1;
+	}
+
 	
 }

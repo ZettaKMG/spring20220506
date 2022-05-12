@@ -18,6 +18,12 @@
   <select id="getBoard" resultType="org.zerock.domain.ex02.BoardDto">
   	SELECT id, title, body, inserted FROM Board WHERE id = #{id}
   </select>
+  
+  <update id="updateBoard">
+  	UPDATE Board SET title = #{title}, body = #{body}
+  	WHERE id = #{id}
+  </update>
+  
   <!-- insert
   
   update 

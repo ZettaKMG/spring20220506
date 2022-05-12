@@ -14,10 +14,18 @@
 <body>
 	<h1>${board.id }번 게시물</h1>
 	
-	제목 : <input type="text" value="${board.title }" readonly /> <br />
+	<c:url value="/ex15/board/modify" var="modifyLink"></c:url>
 	
-	본문 : <textarea cols="30" rows="10" readonly >${board.body }</textarea> <br />
+	<form action="${modifyLink }" method="post">
+	<input type="hidden" name="id" value="${board.id }" />
 	
-	작성일시 : <input type="datetime-local" value="${board.inserted }" readonly />
+	제목 : <input type="text" value="${board.title }" /> <br />
+	
+	본문 : <textarea cols="30" rows="10" name="body" >${board.body }</textarea> <br />
+	
+	작성일시 : <input type="datetime-local" value="${board.inserted }" readonly /> <br />
+	
+	<button>수정</button>
+	</form>
 </body>
 </html>
