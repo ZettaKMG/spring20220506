@@ -19,7 +19,7 @@
 	<form action="${modifyLink }" method="post">
 	<input type="hidden" name="id" value="${board.id }" />
 	
-	제목 : <input type="text" value="${board.title }" /> <br />
+	제목 : <input type="text" value="${board.title }" name="title" /> <br />
 	
 	본문 : <textarea cols="30" rows="10" name="body" >${board.body }</textarea> <br />
 	
