@@ -1,5 +1,7 @@
 package org.zerock.controller.ex09;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -111,4 +113,20 @@ public class Ex14Controller {
 		
 		return "redirect:/ex14/sub06";
 	}
+	
+	@GetMapping("sub07")
+	public void method07(Model model) {
+		List<EmployeeDto> list = service.listEmployee();
+		
+		model.addAttribute("employees", list);
+	}
+	
+	// 고객 목록 조회 코드 작성
+	@GetMapping("sub08")
+	public void method08(Model model) {
+		List<CustomerDto> list = service.listCustomer();
+		
+		model.addAttribute("customers", list);
+	}
+	
 }
