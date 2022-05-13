@@ -9,4 +9,11 @@
 		VALUES (#{boardId}, #{content}, #{inserted} )		
 	</insert>
 
+	<select id="selectReplyByBoardId" resultType="org.zerock.domain.ex02.ReplyDto">
+		SELECT id id, board_id boardId, content content, inserted inserted
+		FROM Reply
+		WHERE board_id = #{boardId}
+		ORDER BY id DESC
+	</select>
+
 </mapper>

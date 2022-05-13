@@ -5,12 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.domain.ex02.ReplyDto;
+import org.zerock.service.ex03.Ex05Service;
 import org.zerock.service.ex03.Ex06Service;
 
 @Controller
 @RequestMapping("ex16")
 public class Ex16Controller {
-
+	
 	@Autowired
 	private Ex06Service service;
 	

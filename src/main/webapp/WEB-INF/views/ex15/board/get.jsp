@@ -46,5 +46,15 @@
 		
 		<button>쓰기</button>
 	</form>
+	
+	<hr />
+	
+	<div>
+		<c:forEach items="${replyList }" var="reply">
+			<div style="boarder: 1px solid black; margin-bottom: 3px;">
+				${reply.inserted } : ${reply.content }
+			</div>
+		</c:forEach>
+	</div>
 </body>
 </html>
