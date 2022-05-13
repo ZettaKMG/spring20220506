@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.zerock.domain.ex02.BoardDto;
 import org.zerock.mapper.ex03.Ex03Mapper;
 import org.zerock.mapper.ex03.Ex04Mapper;
@@ -44,9 +45,14 @@ public class Ex05Service {
 		return cnt == 1;
 	}
 
+	@Transactional
 	public boolean removeBoardById(int id) {
 		// 댓글 지우기
 		replyMapper.deleteReplyByBoard(id);
+		
+		// for transaction
+		// exception
+//		int i = 3 / 0; // Arithmetic Exception
 				
 		// 게시물 지우기		
 		int cnt = mapper.deleteBoard(id);
