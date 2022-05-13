@@ -25,5 +25,11 @@ public class Ex06Service {
 	public List<ReplyDto> listReplyByBoardId(int boardId) {
 		return mapper.selectReplyByBoardId(boardId);
 	}
+
+	public boolean removeReplyById(int id) {
+		int cnt = mapper.deleteReplyById(id);
+		
+		return cnt == 1;
+	}
 	
 }

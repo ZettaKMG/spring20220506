@@ -15,5 +15,9 @@
 		WHERE board_id = #{boardId}
 		ORDER BY id DESC
 	</select>
+	
+	<delete id="deleteReplyById">
+		DELETE FROM Reply WHERE id = #{id}
+	</delete>
 
 </mapper>
