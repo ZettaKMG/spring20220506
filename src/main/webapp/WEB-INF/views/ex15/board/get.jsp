@@ -56,9 +56,9 @@
 				
 				<c:url value="/ex16/reply/modify" var="replyModifyLink" />
 				<form action="${replyModifyLink }" method="post">
-					<input type="hidden" value="${reply.id }" name="id" />
+					<input type="hidden" name="id" value="${reply.id }" />
 					<input type="hidden" name="boardId" value="${board.id }" />
-					<input type="text" value="${reply.content }" name="content" />				
+					<input type="text" name="content" value="${reply.content }" />				
 					<button>수정</button>
 				</form>
 				

@@ -30,7 +30,7 @@ public class Ex16Controller {
 	}
 	
 	@PostMapping("/reply/modify")
-	public String modifyReply(ReplyDto dto) {
+	public String modifyReply(ReplyDto reply) {
 		boolean success = service.modifyReply(reply);
 		
 		return "redirect:/ex15/board/" + reply.getBoardId();

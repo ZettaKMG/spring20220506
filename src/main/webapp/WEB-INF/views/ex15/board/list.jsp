@@ -34,8 +34,13 @@
 					<c:url value="/ex15/board/${board.id }" var="link"></c:url>					
 					
 					<a href="${link }">
-					${board.title }
+						${board.title }
 					</a>
+					
+					<c:if test="${board.numOfReply > 0 }">
+						[${board.numOfReply }]
+					</c:if>
+					
 					</td>
 					<td>${board.inserted }</td>
 				</tr>
