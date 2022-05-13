@@ -28,4 +28,11 @@ public class Ex16Controller {
 		
 		return "redirect:/ex15/board/" + reply.getBoardId();
 	}
+	
+	@PostMapping("/reply/modify")
+	public String modifyReply(ReplyDto dto) {
+		boolean success = service.modifyReply(reply);
+		
+		return "redirect:/ex15/board/" + reply.getBoardId();
+	}
 }
