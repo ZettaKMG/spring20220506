@@ -28,6 +28,11 @@
   	DELETE FROM Board WHERE id = #{id}
   </delete>
   
+  <insert id="insertBoard">
+  	INSERT INTO Board (title, body, inserted)
+  	VALUES (#{title}, #{body}, #{inserted})
+  </insert>
+  
   <!-- insert
   
   update 
