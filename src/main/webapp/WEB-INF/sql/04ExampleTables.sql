@@ -14,3 +14,34 @@ ALTER TABLE Board MODIFY COLUMN id INT PRIMARY KEY AUTO_INCREMENT;
 ALTER TABLE Reply MODIFY COLUMN id INT PRIMARY KEY AUTO_INCREMENT;
 
 ALTER TABLE Reply ADD FOREIGN KEY (board_id) REFERENCES Board(id);
+
+SELECT * FROM Board
+WHERE title LIKE '%쓰기%';
+
+SELECT * FROM w3schools.Products;
+SELECT * FROM w3schools.Categories;
+
+CREATE TABLE Products
+SELECT * FROM w3schools.Products;
+CREATE TABLE Categories
+SELECT * FROM w3schools.Categories;
+
+SELECT * FROM Products;
+SELECT * FROM Categories;
+
+SELECT * FROM Products
+WHERE CategoryID IN (1, 2);
+
+SELECT * FROM Products
+WHERE CategoryID IN (1, 2, 4);
+
+SELECT * FROM Products
+WHERE CategoryID IN (#{i1}, #{i2}, #{i3}, ... ); -- forEach 필요
+;
+
+SELECT c.CategoryName, p.ProductName, p.Unit, p.Price 
+FROM Products p JOIN Categories c ON p.CategoryID = c.CategoryID
+WHERE c.CategoryID IN (1, 3, 4);
+
+SELECT * FROM Products
+WHERE Price > 10;

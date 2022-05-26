@@ -1,0 +1,12 @@
+USE mydb6;
+DROP TABLE Member;
+CREATE TABLE Member (
+	id VARCHAR(20) PRIMARY KEY, 
+    password VARCHAR(20) NOT NULL,
+    email VARCHAR(20) NOT NULL UNIQUE,
+    nickName VARCHAR(20) NOT NULL UNIQUE,
+    inserted DATETIME NOT NULL DEFAULT NOW()
+);
+
+DESC Member;
+SELECT * FROM Member;
